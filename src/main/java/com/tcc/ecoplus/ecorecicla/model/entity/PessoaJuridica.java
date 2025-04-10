@@ -1,10 +1,7 @@
 package com.tcc.ecoplus.ecorecicla.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -13,15 +10,24 @@ import lombok.Data;
 public class PessoaJuridica {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(nullable = false, length = 45)
     private long cnpj;
-    private int cep;
-    private int num;
-    private String senha;
+    @Column(nullable = false, length = 45)
     private String nome;
     private String ramo;
-    private String telefone;
+    @Column(nullable = false, length = 20)
+    private String num;
+    @Column(nullable = false, length = 10)
+    private String cep;
+    @Column(nullable = false, length = 6)
     private String email;
-    private String tipoEmpresa;
+    @Column(nullable = false, length = 100)
+    private String telefone;
+    @Column(nullable = true, length = 13)
+    private String senha;
+    private boolean codstatus;
 
     @Transient
     @JsonIgnore
@@ -35,75 +41,4 @@ public class PessoaJuridica {
         return isValid;
     }
 
-    public long getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(int cnpj) {
-        this.cnpj = cnpj;
-    }
-
-    public int getCep() {
-        return cep;
-    }
-
-    public void setCep(int cep) {
-        this.cep = cep;
-    }
-
-    public int getNum() {
-        return num;
-    }
-
-    public void setNum(int num) {
-        this.num = num;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getRamo() {
-        return ramo;
-    }
-
-    public void setRamo(String ramo) {
-        this.ramo = ramo;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTipoEmpresa() {
-        return tipoEmpresa;
-    }
-
-    public void setTipoEmpresa(String tipoEmpresa) {
-        this.tipoEmpresa = tipoEmpresa;
-    }
 }

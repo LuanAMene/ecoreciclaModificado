@@ -12,8 +12,11 @@ public class Residuo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(nullable = false, length = 50)
     private String grupo;
-    private String nome;
+    @Column(nullable = true, length = 1000)
+    private String descricao;
+    private boolean codstatus;
 
     @Transient
     @JsonIgnore
@@ -22,32 +25,11 @@ public class Residuo {
     @Transient
     @JsonIgnore
     private boolean isValid = true;
+    private String mensagemErro = "";
 
     public boolean validarResiduo() {
         return isValid;
     }
 
-    public long getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getGrupo() {
-        return grupo;
-    }
-
-    public void setGrupo(String grupo) {
-        this.grupo = grupo;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 }

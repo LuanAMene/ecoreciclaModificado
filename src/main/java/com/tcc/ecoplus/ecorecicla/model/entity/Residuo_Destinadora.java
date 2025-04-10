@@ -1,18 +1,18 @@
 package com.tcc.ecoplus.ecorecicla.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Table(name = "residuo_destinadora")
 @Data
-public class Residuo_destinadora {
+public class Residuo_Destinadora {
 
-    private long id_residuo;
-    private long cnpj_destinadora;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private boolean codstatus;
 
     @Transient
     @JsonIgnore
@@ -26,19 +26,4 @@ public class Residuo_destinadora {
         return isValid;
     }
 
-    public long getId_residuo() {
-        return id_residuo;
-    }
-
-    public void setId_residuo(int id_residuo) {
-        this.id_residuo = id_residuo;
-    }
-
-    public long getCnpj_destinadora() {
-        return cnpj_destinadora;
-    }
-
-    public void setCnpj_destinadora(int cnpj_destinadora) {
-        this.cnpj_destinadora = cnpj_destinadora;
-    }
 }

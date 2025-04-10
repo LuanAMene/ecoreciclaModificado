@@ -10,10 +10,10 @@ import java.util.List;
 @Repository
 public interface ColetaRepository extends JpaRepository<Coleta, Long> {
 
-    @Query(value = "SELECT * FROM Usuario u WHERE u.cod_status='1'", nativeQuery = true)
+    @Query(value = "SELECT * FROM Coleta u WHERE u.cod_status='1'", nativeQuery = true)
     public List<Coleta> findByAllActive();
 
-    @Query(value = "SELECT * FROM Usuario u WHERE u.id=?1 AND u.cod_status='1'", nativeQuery = true)
+    @Query(value = "SELECT * FROM Coleta u WHERE u.id=?1 AND u.statusColeta='1'", nativeQuery = true)
     public List<Coleta> findByIdActive(Long id);
 
 }
