@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "destinadora")
 @Data
@@ -27,6 +30,10 @@ public class Destinadora {
     @Column(nullable = true, length = 13)
     private String senha;
     private boolean codstatus;
+
+    @OneToMany(mappedBy = "destinadora", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Destinadora> destinadoras = new ArrayList<>();
 
     @Transient
     @JsonIgnore

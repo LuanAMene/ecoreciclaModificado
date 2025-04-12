@@ -14,6 +14,14 @@ public class Residuo_Destinadora {
     private long id;
     private boolean codstatus;
 
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_residuo", referencedColumnName = "id", nullable = false)
+    private Residuo residuo;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_destinadora", referencedColumnName = "id", nullable = false)
+    private Destinadora destinadora;
+
     @Transient
     @JsonIgnore
     private String mensagemError = "";
