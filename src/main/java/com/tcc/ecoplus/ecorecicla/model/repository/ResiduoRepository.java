@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface PessoaJuridicaRepository extends JpaRepository<Coleta, Long> {
+public interface ResiduoRepository extends JpaRepository<Coleta, Long> {
 }

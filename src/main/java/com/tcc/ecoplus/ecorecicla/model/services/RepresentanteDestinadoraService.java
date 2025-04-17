@@ -1,0 +1,4 @@
+package com.tcc.ecoplus.ecorecicla.model.services;
+
+public interface RepresentanteDestinadoraService {
+}

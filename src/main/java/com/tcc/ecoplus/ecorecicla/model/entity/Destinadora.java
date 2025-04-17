@@ -31,9 +31,16 @@ public class Destinadora {
     private String senha;
     private boolean codstatus;
 
+    @OneToMany(mappedBy = "destinadora",cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
+    private List<Coleta> coletas = new ArrayList<>();
+
     @OneToMany(mappedBy = "destinadora", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
-    private List<Destinadora> destinadoras = new ArrayList<>();
+    private List<Residuo_Destinadora> residuo_destinadoras = new ArrayList<>();
+
+    @OneToMany(mappedBy = "residuo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<RepresentanteDestinadora> representanteDestinadora = new ArrayList<>();
 
     @Transient
     @JsonIgnore

@@ -19,6 +19,15 @@ public class Coleta {
     private LocalDateTime data;
     private boolean codstatus;
 
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "pessoaJuridica_id", referencedColumnName = "id", nullable = false)
+    private PessoaJuridica pessoaJuridica;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "destinadora_id", referencedColumnName = "id", nullable = true)
+    @JsonIgnore
+    private Destinadora destinadora;
+
     @Transient
     @JsonIgnore
     private String mensagemError = "";
