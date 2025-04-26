@@ -19,6 +19,7 @@ public class PessoaJuridica {
     private long cnpj;
     @Column(nullable = false, length = 45)
     private String nome;
+    @Column(nullable = false, length = 20)
     private String ramo;
     @Column(nullable = false, length = 20)
     private String num;

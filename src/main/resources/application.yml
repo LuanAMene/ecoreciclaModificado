@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=pizzariabomgosto;integratedSecurity=false;encrypt=true;trustServerCerticate=true
+    url: jdbc:sqlserver://localhost:1433;databaseName=EcoRecicla;integratedSecurity=false;encrypt=true;trustServerCerticate=true
     username: sa
     password: '@ITB123456'
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
