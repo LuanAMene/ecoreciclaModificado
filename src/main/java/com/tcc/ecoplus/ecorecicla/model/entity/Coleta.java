@@ -13,11 +13,18 @@ public class Coleta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(nullable = false, length = 45)
     private String status;
+    @Column(nullable = false, length = 45)
     private String descricao;
+    @Column(nullable = false, length = 300)
     private int qt;
+    @Column(nullable = false, length = 45)
     private LocalDateTime data;
+    @Column(nullable = false, length = 45)
     private boolean codstatus;
+
+
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "pessoaJuridica_id", referencedColumnName = "id", nullable = false)
