@@ -25,11 +25,19 @@ public class PessoaJuridica {
     private String num;
     @Column(nullable = false, length = 10)
     private String cep;
-    @Column(nullable = false, length = 6)
+    @Column(nullable = true, length = 45)
+    private String cidade;
+    @Column(nullable = true, length = 100)
+    private String logradouro;
+    @Column(nullable = true, length = 45)
+    private String bairro;
+    @Column(nullable = true, length = 2)
+    private String uf;
+    @Column(nullable = false, length = 15)
     private String email;
     @Column(nullable = false, length = 100)
     private String telefone;
-    @Column(nullable = true, length = 13)
+    @Column(nullable = false, length = 13)
     private String senha;
     private boolean codstatus;
 

@@ -17,8 +17,8 @@ public class Coleta {
     private String status;
     @Column(nullable = false, length = 45)
     private String descricao;
-    @Column(nullable = false, length = 300)
-    private int qt;
+    @Column(nullable = false, length = 10)
+    private String qt;
     @Column(nullable = false, length = 45)
     private LocalDateTime data;
     @Column(nullable = false, length = 45)
