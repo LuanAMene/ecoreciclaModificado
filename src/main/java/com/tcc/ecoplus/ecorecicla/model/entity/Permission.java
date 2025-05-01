@@ -7,15 +7,15 @@ public enum Permission {
     ADMIN_CREATE("admin:create"),
     ADMIN_DELETE("admin:delete"),
 
-    REPRESENTANTECOLETA_READ("representantecoletora:read"),
-    REPRESENTANTECOLETA_UPDATE("representantecoletora:update"),
-    REPRESENTANTECOLETA_CREATE("representantecoletora:create"),
-    REPRESENTANTECOLETA_DELETE("representantecoletora:delete"),
+    GERADORA_READ("representantecoletora:read"),
+    GERADORA_UPDATE("representantecoletora:update"),
+    GERADORA_CREATE("representantecoletora:create"),
+    GERADORA_DELETE("representantecoletora:delete"),
 
-    REPRESENTANTEDESTINADORA_READ("representantedestinadora:read"),
-    REPRESENTANTEDESTINADORA_UPDATE("representantedestinadora:update"),
-    REPRESENTANTEDESTINADORA_CREATE("representantedestinadora:create"),
-    REPRESENTANTEDESTINADORA_DELETE("representantedestinadora:delete");
+    DESTINADORA_READ("representantedestinadora:read"),
+    DESTINADORA_UPDATE("representantedestinadora:update"),
+    DESTINADORA_CREATE("representantedestinadora:create"),
+    DESTINADORA_DELETE("representantedestinadora:delete");
 
     private final String permission;
 

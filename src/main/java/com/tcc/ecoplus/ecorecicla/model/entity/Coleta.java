@@ -27,8 +27,8 @@ public class Coleta {
 
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "pessoaJuridica_id", referencedColumnName = "id", nullable = false)
-    private PessoaJuridica pessoaJuridica;
+    @JoinColumn(name = "geradora_id", referencedColumnName = "id", nullable = false)
+    private Geradora geradora;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "destinadora_id", referencedColumnName = "id", nullable = true)

@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "PessoaJuridica")
+@Table(name = "Geradora")
 @Data
-public class PessoaJuridica {
+public class Geradora {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,7 +41,7 @@ public class PessoaJuridica {
     private String senha;
     private boolean codstatus;
 
-    @OneToMany(mappedBy = "PessoaJuridica",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "Geradora",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Coleta> coletas = new ArrayList<Coleta>();
 

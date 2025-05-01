@@ -9,13 +9,13 @@ public class RepresentanteColetora extends Usuario {
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = true)
-    private PessoaJuridica pessoaJuridica;
+    private Geradora geradora;
 
-    public PessoaJuridica getPessoaJuridica() {
-        return pessoaJuridica;
+    public Geradora getPessoaJuridica() {
+        return geradora;
     }
 
-    public void setPessoaJuridica(PessoaJuridica pessoaJuridica) {
-        this.pessoaJuridica = pessoaJuridica;
+    public void setPessoaJuridica(Geradora geradora) {
+        this.geradora = geradora;
     }
 }

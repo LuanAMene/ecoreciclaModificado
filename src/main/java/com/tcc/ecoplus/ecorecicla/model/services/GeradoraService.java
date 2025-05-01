@@ -1,4 +1,4 @@
 package com.tcc.ecoplus.ecorecicla.model.services;
 
-public interface PessoaJuridicaService {
+public interface GeradoraService {
 }
