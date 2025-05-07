@@ -57,8 +57,11 @@ public class Geradora {
     @JsonIgnore
     private boolean isValid = true;
 
-    public boolean validarPessoaJuridica() {
+    public boolean validarGeradora() {
         return isValid;
     }
 
+    public String getMensagemErro() {
+        return mensagemError;
+    }
 }

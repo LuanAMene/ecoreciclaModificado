@@ -35,10 +35,10 @@ public class GeradoraController {
     }
 
     @GetMapping("/coleta/{id}")
-    public ResponseEntity<List<Coleta>> findAllById(@PathVariable(value = "id") String id) {
+    public ResponseEntity<Coleta> findAllById(@PathVariable(value = "id") String id) {
         try{
             Long idLong = Long.parseLong(id);
-            return ResponseEntity.ok().body(coletaService.findById());
+            return ResponseEntity.ok().body(coletaService.findById(idLong));
         } catch (NumberFormatException e) {
             throw new BadRequest("'"+id+"' não é um número inteiro válido. Por favor, forneça um valor inteiro.");
         }
