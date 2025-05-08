@@ -1,7 +1,7 @@
 package com.tcc.ecoplus.ecorecicla.model.services;
 
-import com.itb.mif3an.pizzariabomgosto.exceptions.BadRequest;
-import com.itb.mif3an.pizzariabomgosto.exceptions.NotFound;
+import com.tcc.ecoplus.ecorecicla.exceptions.BadRequest;
+import com.tcc.ecoplus.ecorecicla.exceptions.NotFound;
 import com.tcc.ecoplus.ecorecicla.model.entity.Geradora;
 import com.tcc.ecoplus.ecorecicla.model.repository.GeradoraRepository;
 import org.springframework.stereotype.Service;
@@ -37,7 +37,7 @@ public class GeradoraServiceImp implements GeradoraService{
         try{
             return geradoraRepository.findById(id).get();
         } catch (Exception e){
-            throw new com.itb.mif3an.pizzariabomgosto.exceptions.NotFound("Geradora não encontrada com o id " + id);
+            throw new NotFound("Geradora não encontrada com o id " + id);
         }
     }
 

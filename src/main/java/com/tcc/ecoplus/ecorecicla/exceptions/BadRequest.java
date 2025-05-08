@@ -1,5 +1,4 @@
-package com.itb.mif3an.pizzariabomgosto.exceptions;
-
+package com.tcc.ecoplus.ecorecicla.exceptions;
 
 
 public class BadRequest extends RuntimeException {
