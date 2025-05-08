@@ -1,7 +1,7 @@
 package com.tcc.ecoplus.ecorecicla.controller;
 
 
-import com.itb.mif3an.pizzariabomgosto.exceptions.BadRequest;
+import com.tcc.ecoplus.ecorecicla.exceptions.BadRequest;
 import com.tcc.ecoplus.ecorecicla.model.entity.Coleta;
 import com.tcc.ecoplus.ecorecicla.model.services.ColetaService;
 import org.apache.catalina.connector.Response;
@@ -24,7 +24,7 @@ public class GeradoraController {
     }
 
     @PostMapping("/coleta")
-    public ResponseEntity<Coleta> saveColeta(Coleta coleta) {
+    public ResponseEntity<Coleta> saveColeta(@RequestBody Coleta coleta) {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/v1/geradora").toUriString());
         return ResponseEntity.created(uri).body(coletaService.save(coleta));
     }

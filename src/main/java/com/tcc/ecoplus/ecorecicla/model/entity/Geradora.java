@@ -2,14 +2,18 @@ package com.tcc.ecoplus.ecorecicla.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@NoArgsConstructor
 @Entity
 @Table(name = "Geradora")
 @Data
+@AllArgsConstructor
 public class Geradora {
 
     @Id
@@ -17,7 +21,7 @@ public class Geradora {
     private long id;
     @Column(nullable = false, length = 45)
     private long cnpj;
-    @Column(nullable = false, length = 45)
+    @Column(nullable = false, length = 14)
     private String nome;
     @Column(nullable = false, length = 20)
     private String ramo;

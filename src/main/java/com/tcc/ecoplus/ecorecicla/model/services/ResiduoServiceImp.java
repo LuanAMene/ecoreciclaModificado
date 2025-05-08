@@ -1,6 +1,6 @@
 package com.tcc.ecoplus.ecorecicla.model.services;
 
-import com.itb.mif3an.pizzariabomgosto.exceptions.BadRequest;
+import com.tcc.ecoplus.ecorecicla.exceptions.BadRequest;
 import com.tcc.ecoplus.ecorecicla.exceptions.NotFound;
 import com.tcc.ecoplus.ecorecicla.model.entity.Residuo;
 import com.tcc.ecoplus.ecorecicla.model.repository.ResiduoRepository;

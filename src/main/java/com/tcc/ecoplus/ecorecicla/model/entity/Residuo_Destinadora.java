@@ -3,7 +3,9 @@ package com.tcc.ecoplus.ecorecicla.model.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @Entity
 @Table(name = "residuo_destinadora")
 @Data
