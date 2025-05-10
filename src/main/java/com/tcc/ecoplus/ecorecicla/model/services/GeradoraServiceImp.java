@@ -19,7 +19,6 @@ public class GeradoraServiceImp implements GeradoraService{
 
     @Override
     public Geradora save(Geradora geradora) {
-        if(!geradora.validarGeradora()){}
         geradora.setCodstatus(true);
         if (!geradora.validarGeradora()) {
             throw new BadRequest(geradora.getMensagemErro());

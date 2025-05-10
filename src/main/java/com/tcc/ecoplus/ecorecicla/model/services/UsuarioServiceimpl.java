@@ -4,10 +4,11 @@ import com.tcc.ecoplus.ecorecicla.exceptions.BadRequest;
 import com.tcc.ecoplus.ecorecicla.exceptions.NotFound;
 import com.tcc.ecoplus.ecorecicla.model.entity.Usuario;
 import com.tcc.ecoplus.ecorecicla.model.repository.UsuarioRepository;
-import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UsuarioServiceimpl implements UsuarioService{
 
     private final UsuarioRepository usuarioRepository;

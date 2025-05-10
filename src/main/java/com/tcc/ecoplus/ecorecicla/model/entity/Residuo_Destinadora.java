@@ -26,7 +26,7 @@ public class Residuo_Destinadora {
 
     @Transient
     @JsonIgnore
-    private String mensagemError = "";
+    private String mensagemErro = "";
 
     @Transient
     @JsonIgnore
