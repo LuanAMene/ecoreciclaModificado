@@ -29,7 +29,7 @@ public class Coleta {
 
 
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name = "geradora_id", referencedColumnName = "id", nullable = false)
     private Geradora geradora;
 

@@ -28,17 +28,15 @@ public class ResiduoDestinadoraServiceImp implements ResiduoDestinadoraService{
 
     @Override
     public List<Residuo_Destinadora> findAll() {
-        return ResiduoDestinadoraRepository.findAll();
+        return residuoDestinadoraRepository.findAll();
     }
 
     @Override
     public Residuo_Destinadora findById(Long id) {
-        try {
-            Residuo_Destinadora residuo_destinadora = residuoDestinadoraRepository.findById(id).get();
-            return residuo_destinadora();
-        } catch (Exception e) {
-            throw new NotFound("Residuo não aceito pela destinadora com id "+ id);
-        }    }
+        return residuoDestinadoraRepository.findById(id)
+                .orElseThrow(() -> new NotFound("Residuo não aceito pela destinadora com id " + id));
+    }
+
 
     @Override
     public boolean delete(Long id) {

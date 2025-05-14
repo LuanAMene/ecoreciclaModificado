@@ -1,7 +1,7 @@
 package com.tcc.ecoplus.ecorecicla.model.services;
 
-import com.itb.mif3an.pizzariabomgosto.exceptions.BadRequest;
-import com.itb.mif3an.pizzariabomgosto.exceptions.NotFound;
+import com.tcc.ecoplus.ecorecicla.exceptions.BadRequest;
+import com.tcc.ecoplus.ecorecicla.exceptions.NotFound;
 import com.tcc.ecoplus.ecorecicla.model.entity.Coleta;
 import com.tcc.ecoplus.ecorecicla.model.repository.ColetaRepository;
 import org.springframework.stereotype.Service;
@@ -21,6 +21,9 @@ public class ColetaServiceImpl implements ColetaService {
     public Coleta save(Coleta coleta) {
         coleta.setCodstatus(true);
         if(!coleta.validarColeta()) {
+            throw new BadRequest(coleta.getMensagemErro());
+        }
+        if(coleta.getGeradora() == null) {
             throw new BadRequest(coleta.getMensagemErro());
         }
         return coletaRepository.save(coleta);
