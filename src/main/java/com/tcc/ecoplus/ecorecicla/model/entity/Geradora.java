@@ -45,11 +45,11 @@ public class Geradora {
     private String senha;
     private boolean codstatus;
 
-    @OneToMany(mappedBy = "Geradora",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "geradora",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Coleta> coletas = new ArrayList<Coleta>();
 
-    @OneToMany(mappedBy = "residuo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "geradora", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
     private List<RepresentanteColetora> representanteColetoras = new ArrayList<>();
 

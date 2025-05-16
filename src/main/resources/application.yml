@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=EcoRecicla;integratedSecurity=false;encrypt=true;trustServerCerticate=true
+    url: jdbc:sqlserver://localhost:1433;databaseName=EcoRecicla;integratedSecurity=false;encrypt=false;trustServerCerticate=true
     username: sa
     password: '@ITB123456'
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
@@ -11,3 +11,11 @@ spring:
     properties:
       hibernate:
         show_sql: true
+
+application:
+  security:
+    jwt:
+      secret-key: MinhaFraseSecretaFranHeimmer
+      expiration: 86400000 # 1 dia
+      refresh-token:
+        expiration: 604800000 # 7 dias

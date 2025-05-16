@@ -48,7 +48,7 @@ public class Destinadora {
     @JsonIgnore
     private List<Residuo_Destinadora> residuo_destinadoras = new ArrayList<>();
 
-    @OneToMany(mappedBy = "residuo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "destinadora", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
     private List<RepresentanteDestinadora> representanteDestinadora = new ArrayList<>();
 

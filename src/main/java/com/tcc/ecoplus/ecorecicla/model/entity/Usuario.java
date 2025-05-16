@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.tcc.ecoplus.ecorecicla.model.token.Token;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+
+import java.util.List;
 
 @NoArgsConstructor
 @Entity
@@ -35,6 +38,11 @@ public class Usuario {
     @Column(nullable = false, length = 250)
     private String password;
     private boolean codstatus;
+
+
+    @OneToMany(mappedBy = "usuario")
+    @JsonIgnore
+    private List<Token> tokens;
 
     @Enumerated(EnumType.STRING)
     @Column(insertable = false, updatable = false)
