@@ -27,6 +27,16 @@ public class UsuarioServiceimpl implements UsuarioService{
     }
 
     @Override
+    public Usuario findByEmail(String email) {
+        try {
+            return this.usuarioRepository.findByEmail(email).get();
+        }catch (Exception e) {
+            throw new NotFound("Usuário não encontrado com o e-mail" + email);
+        }
+
+    }
+
+    @Override
     public List<Usuario> findAll() {
         return usuarioRepository.findAll();
     }

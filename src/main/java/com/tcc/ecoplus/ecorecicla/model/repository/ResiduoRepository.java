@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ResiduoRepository extends JpaRepository<Residuo, Long> {
+
+
 }

@@ -33,6 +33,7 @@ private final ResiduoService residuoService;
         return ResponseEntity.ok(residuoService.findAll());
     }
 
+    @GetMapping("/residuo")
     public ResponseEntity<Residuo> findById(@PathVariable(value = "id") String id) {
         try{
             Long IdLongLong = Long.parseLong(id);
