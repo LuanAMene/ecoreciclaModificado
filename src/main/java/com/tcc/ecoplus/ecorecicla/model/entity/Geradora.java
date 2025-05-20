@@ -53,6 +53,10 @@ public class Geradora {
     @JsonIgnore
     private List<RepresentanteColetora> representanteColetoras = new ArrayList<>();
 
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id", nullable = false)
+    private Usuario usuario;
+
     @Transient
     @JsonIgnore
     private String mensagemError = "";

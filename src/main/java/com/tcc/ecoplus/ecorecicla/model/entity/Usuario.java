@@ -14,6 +14,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
@@ -41,6 +42,13 @@ public class Usuario implements UserDetails {
     @Column(nullable = false, length = 250)
     private String password;
     private boolean codStatus;
+
+    @OneToMany(mappedBy = "usuario",cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
+    private List<Destinadora> destinadoras = new ArrayList<>();
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Geradora> geradoras = new ArrayList<>();
 
 
     @OneToMany(mappedBy = "usuario")
