@@ -173,4 +173,6 @@ public class Usuario implements UserDetails {
         return isValid;
     }
 
+    public void setCodstatus(boolean b) {
+    }
 }

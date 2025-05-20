@@ -11,7 +11,7 @@
 	<groupId>com.tcc.ecoplus</groupId>
 	<artifactId>ecorecicla</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ecorecicla</name>
+	<name>ecorecicla</name>,0
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
