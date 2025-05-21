@@ -31,7 +31,7 @@ private final ResiduoDestinadoraService residuoDestinadoraService;
         return ResponseEntity.ok(residuoDestinadoraService.findAll());
     }
 
-    @GetMapping("/residuo_destinadoracontroller")
+    @GetMapping("/residuo_destinadoracontroller/{id}")
     public ResponseEntity<Residuo_Destinadora> findById(@PathVariable(value = "id") String id) {
         try {Long idLong = Long.parseLong(id);
         return ResponseEntity.ok(residuoDestinadoraService.findById(idLong));

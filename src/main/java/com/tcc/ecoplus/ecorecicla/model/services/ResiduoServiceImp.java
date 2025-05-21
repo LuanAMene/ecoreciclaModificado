@@ -4,9 +4,10 @@ import com.tcc.ecoplus.ecorecicla.exceptions.BadRequest;
 import com.tcc.ecoplus.ecorecicla.exceptions.NotFound;
 import com.tcc.ecoplus.ecorecicla.model.entity.Residuo;
 import com.tcc.ecoplus.ecorecicla.model.repository.ResiduoRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ResiduoServiceImp implements ResiduoService {
 
     private final ResiduoRepository residuoRepository;
