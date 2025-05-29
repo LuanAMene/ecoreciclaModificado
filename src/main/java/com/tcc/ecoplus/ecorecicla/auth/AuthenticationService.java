@@ -5,7 +5,10 @@ import com.tcc.ecoplus.ecorecicla.config.JwtService;
 import com.tcc.ecoplus.ecorecicla.exceptions.BadRequest;
 import com.tcc.ecoplus.ecorecicla.model.entity.Usuario;
 import com.tcc.ecoplus.ecorecicla.model.repository.UsuarioRepository;
+import com.tcc.ecoplus.ecorecicla.model.token.Token;
 import com.tcc.ecoplus.ecorecicla.model.token.TokenRepository;
+import com.tcc.ecoplus.ecorecicla.model.token.TokenType;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -16,18 +19,18 @@ public class AuthenticationService {
     private final TokenRepository tokenRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
-    private final AuthenticationService authenticationService;
+    private final AuthenticationManager authenticationManager;
 
-    public AuthenticationService(UsuarioRepository repository, TokenRepository tokenRepository, PasswordEncoder passwordEncoder, JwtService jwtService, AuthenticationService authenticationService) {
+    public AuthenticationService(UsuarioRepository repository, TokenRepository tokenRepository, PasswordEncoder passwordEncoder, JwtService jwtService, AuthenticationManager authenticationManager) {
         this.repository = repository;
         this.tokenRepository = tokenRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtService = jwtService;
-        this.authenticationService = authenticationService;
+        this.authenticationManager = authenticationManager;
     }
 
     public AuthenticationResponse register(RegisterRequest request) {
-        String nomeClasse = String.valueOf(request.getNome());
+        String nomeClasse = String.valueOf(request.getRole());
 
 
         char primeiroCharMaisculo = Character.toUpperCase(nomeClasse.charAt(0));
@@ -51,6 +54,8 @@ public class AuthenticationService {
          var savedUser = repository.save(usuario);
          var jwtToken = jwtService.generateToken(usuario);
          var refreshToken = jwtService.generateRefreshToken(usuario);
+        savedUserToken(savedUser, jwtToken);
+        return new AuthenticationResponse(jwtToken, refreshToken);
 
         }catch (ClassNotFoundException | InstantiationException | IllegalAccessException e){
             e.printStackTrace();
@@ -59,8 +64,16 @@ public class AuthenticationService {
         }
 
 
+    }
 
-        return null;
+    private void savedUserToken(Usuario usuario, String jwtToken) {
+        var token = new Token();
+        token.setUsuario(usuario);
+        token.setToken(jwtToken);
+        token.setTokenType(TokenType.BEARER);
+        token.setExpired(false);
+        token.setRevoked(false);
+        tokenRepository.save(token);
     }
 
 }

@@ -11,6 +11,10 @@ public class RepresentanteColetora extends Usuario {
     @JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = true)
     private Geradora geradora;
 
+    public RepresentanteColetora() {
+        super();
+    }
+
     public Geradora getPessoaJuridica() {
         return geradora;
     }

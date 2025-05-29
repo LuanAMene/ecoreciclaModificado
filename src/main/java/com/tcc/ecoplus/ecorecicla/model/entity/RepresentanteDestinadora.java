@@ -10,6 +10,10 @@ public class RepresentanteDestinadora extends Usuario {
     @JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = true)
     private Destinadora destinadora;
 
+    public RepresentanteDestinadora() {
+        super();
+    }
+
     public Destinadora getDestinadora() {
         return destinadora;
     }

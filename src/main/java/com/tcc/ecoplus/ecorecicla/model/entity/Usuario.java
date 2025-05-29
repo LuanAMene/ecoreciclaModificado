@@ -7,13 +7,10 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.tcc.ecoplus.ecorecicla.model.token.Token;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -41,6 +38,8 @@ public class Usuario implements UserDetails {
     private String email;
     @Column(nullable = false, length = 250)
     private String password;
+    @Column(nullable = true)
+    private byte imagem;
     private boolean codStatus;
 
     @OneToMany(mappedBy = "usuario",cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
@@ -63,6 +62,14 @@ public class Usuario implements UserDetails {
     @Transient
     @JsonIgnore
     private boolean isValid = true;
+
+    public Usuario(byte imagem) {
+        this.imagem = imagem;
+    }
+
+    public Usuario() {
+
+    }
 
     public long getId() {
         return id;
@@ -182,5 +189,13 @@ public class Usuario implements UserDetails {
     }
 
     public void setCodstatus(boolean b) {
+    }
+
+    public byte getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(byte imagem) {
+        this.imagem = imagem;
     }
 }
