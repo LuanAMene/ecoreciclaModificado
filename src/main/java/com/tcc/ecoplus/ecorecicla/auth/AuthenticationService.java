@@ -31,12 +31,19 @@ public class AuthenticationService {
 
     public AuthenticationResponse register(RegisterRequest request) {
         String nomeClasse = String.valueOf(request.getRole());
+        nomeClasse = nomeClasse.toLowerCase();
 
+        if(nomeClasse.equals("representantedestinadora")) {
+            nomeClasse = "RepresentanteDestinadora";
+        }else if(nomeClasse.equals("representantecoletora")) {
+            nomeClasse = "RepresentanteColetora";
+        } else {
+            char primeiroCharMaisculo = Character.toUpperCase(nomeClasse.charAt(0));
+            nomeClasse = nomeClasse.substring(1);
+            nomeClasse = primeiroCharMaisculo + nomeClasse;
+        }
 
-        char primeiroCharMaisculo = Character.toUpperCase(nomeClasse.charAt(0));
-        nomeClasse = nomeClasse.substring(1);
-        nomeClasse = primeiroCharMaisculo + nomeClasse;
-
+        System.out.println(nomeClasse);
 
 
         try{

@@ -1,7 +1,9 @@
 package com.tcc.ecoplus.ecorecicla.model.entity;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @Entity
 @DiscriminatorValue(value = "REPRESENTANTEDESTINADORA")
 public class RepresentanteDestinadora extends Usuario {
@@ -10,9 +12,7 @@ public class RepresentanteDestinadora extends Usuario {
     @JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = true)
     private Destinadora destinadora;
 
-    public RepresentanteDestinadora() {
-        super();
-    }
+
 
     public Destinadora getDestinadora() {
         return destinadora;

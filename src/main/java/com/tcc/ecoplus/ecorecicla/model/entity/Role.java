@@ -12,32 +12,32 @@ public enum Role {
                     ADMIN_UPDATE,
                     ADMIN_CREATE,
                     ADMIN_DELETE,
-                    DESTINADORA_READ,
-                    DESTINADORA_UPDATE,
-                    DESTINADORA_CREATE,
-                    DESTINADORA_DELETE,
-                    GERADORA_READ,
-                    GERADORA_CREATE,
-                    GERADORA_UPDATE,
-                    GERADORA_DELETE
+                    REPRESENTANTEDESTINADORA_READ,
+                    REPRESENTANTEDESTINADORA_UPDATE,
+                    REPRESENTANTEDESTINADORA_CREATE,
+                    REPRESENTANTEDESTINADORA_DELETE,
+                    REPRESENTANTECOLETORA_READ,
+                    REPRESENTANTECOLETORA_CREATE,
+                    REPRESENTANTECOLETORA_UPDATE,
+                    REPRESENTANTECOLETORA_DELETE
 
             )
     ),
 
-    DESTINADORA(
+    REPRESENTANTEDESTINADORA(
             Set.of(
-                    DESTINADORA_READ,
-                    DESTINADORA_UPDATE,
-                    DESTINADORA_CREATE,
-                    DESTINADORA_DELETE
+                    REPRESENTANTEDESTINADORA_READ,
+                    REPRESENTANTEDESTINADORA_UPDATE,
+                    REPRESENTANTEDESTINADORA_CREATE,
+                    REPRESENTANTEDESTINADORA_DELETE
             )
     ),
-    GERADORA(
+    REPRESENTANTECOLETORA(
             Set.of(
-                    GERADORA_READ,
-                    GERADORA_CREATE,
-                    GERADORA_UPDATE,
-                    GERADORA_DELETE
+                    REPRESENTANTECOLETORA_READ,
+                    REPRESENTANTECOLETORA_CREATE,
+                    REPRESENTANTECOLETORA_UPDATE,
+                    REPRESENTANTECOLETORA_DELETE
                     )
     );
 

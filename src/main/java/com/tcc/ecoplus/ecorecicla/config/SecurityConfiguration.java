@@ -26,7 +26,7 @@ public class SecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(req ->
                         req
-                                .requestMatchers("/api/v1/representanteColetora/**").permitAll()
+                                .requestMatchers("/api/v1/geradora/**").permitAll()
                                     .requestMatchers(WHITE_LIST_URL).permitAll()
                 );
 

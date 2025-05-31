@@ -15,7 +15,7 @@ spring:
 application:
   security:
     jwt:
-      secret-key: MinhaFraseSecretaFranHeimmer
+      secret-key: elXBEYI9HOH1V4uTbIUp+Bqpu+fuMMDnLxKEN8EOU1gb9v7FzQ79NWbYAXSHYDjL
       expiration: 86400000 # 1 dia
       refresh-token:
         expiration: 604800000 # 7 dias
