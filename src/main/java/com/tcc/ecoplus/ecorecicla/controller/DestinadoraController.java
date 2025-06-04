@@ -11,7 +11,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/vi/residuo_destinadoracontroller")
+@RequestMapping("/api/v1/residuo_destinadoracontroller")
 public class DestinadoraController {
 
 private final ResiduoDestinadoraService residuoDestinadoraService;
@@ -26,7 +26,7 @@ private final ResiduoDestinadoraService residuoDestinadoraService;
         return ResponseEntity.created(uri).body(residuoDestinadoraService.save(residuo_destinadora));
     }
 
-    @GetMapping("/residuo_destinadoracontroller")
+    @GetMapping("/residuo")
     public ResponseEntity<List<Residuo_Destinadora>> findAll() {
         return ResponseEntity.ok(residuoDestinadoraService.findAll());
     }

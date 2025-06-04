@@ -30,12 +30,11 @@ public class Coleta {
 
 
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    @JoinColumn(name = "geradora_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "geradora_id", referencedColumnName = "id", nullable = true)
     private Geradora geradora;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     @JoinColumn(name = "destinadora_id", referencedColumnName = "id", nullable = true)
-    @JsonIgnore
     private Destinadora destinadora;
 
     @Transient
