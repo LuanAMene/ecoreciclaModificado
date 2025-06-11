@@ -10,13 +10,15 @@ import java.util.List;
 
 @NoArgsConstructor
 @Entity
-@Table(name = "Residuo")
 @Data
+@Table(name = "Residuo")
 public class Residuo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(nullable = false, length = 50)
+    private String classe;
     @Column(nullable = false, length = 50)
     private String grupo;
     @Column(nullable = true, length = 1000)

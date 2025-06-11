@@ -27,6 +27,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(req ->
                         req
                                 .requestMatchers("/api/v1/geradora/**").permitAll()
+                                .requestMatchers("/api/v1/usuario/**").permitAll()
                                     .requestMatchers(WHITE_LIST_URL).permitAll()
                 );
 
