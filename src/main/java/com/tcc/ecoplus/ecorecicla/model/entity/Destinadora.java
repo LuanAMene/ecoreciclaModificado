@@ -33,7 +33,7 @@ public class Destinadora {
     private String bairro;
     @Column(nullable = true, length = 2)
     private String uf;
-    @Column(nullable = false, length = 6)
+    @Column(nullable = false, length = 20)
     private String email;
     @Column(nullable = false, length = 100)
     private String telefone;
@@ -53,7 +53,7 @@ public class Destinadora {
     private List<RepresentanteDestinadora> representanteDestinadora = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_usuario", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = false)
     private Usuario usuario;
 
     @Transient
