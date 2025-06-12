@@ -18,13 +18,12 @@ public class Coleta {
     private int id;
     @Column(nullable = false, length = 45)
     private String status;
-    @Column(nullable = false, length = 45)
+    @Column(nullable = false, length = 1000)
     private String descricao;
     @Column(nullable = false, length = 10)
     private String qt;
     @Column(nullable = false, length = 45)
     private LocalDateTime data;
-    @Column(nullable = false, length = 45)
     private boolean codstatus;
 
 

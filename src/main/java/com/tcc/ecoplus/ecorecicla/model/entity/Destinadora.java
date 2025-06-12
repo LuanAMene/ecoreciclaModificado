@@ -19,8 +19,6 @@ public class Destinadora {
     private long id;
     @Column(nullable = false, length = 45)
     private long cnpj;
-    @Column(nullable = false, length = 45)
-    private String nome;
     @Column(nullable = false, length = 20)
     private String num;
     @Column(nullable = false, length = 10)
@@ -33,8 +31,6 @@ public class Destinadora {
     private String bairro;
     @Column(nullable = true, length = 2)
     private String uf;
-    @Column(nullable = false, length = 20)
-    private String email;
     @Column(nullable = false, length = 100)
     private String telefone;
     @Column(nullable = true, length = 13)

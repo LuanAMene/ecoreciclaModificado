@@ -28,7 +28,9 @@ public class SecurityConfiguration {
                         req
                                 .requestMatchers("/api/v1/geradora/**").permitAll()
                                 .requestMatchers("/api/v1/usuario/**").permitAll()
-                                    .requestMatchers(WHITE_LIST_URL).permitAll()
+                                .requestMatchers("/api/v1/admin/**").permitAll()
+
+                                .requestMatchers(WHITE_LIST_URL).permitAll()
                 );
 
 

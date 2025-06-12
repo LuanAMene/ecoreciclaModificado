@@ -12,7 +12,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController@RequestMapping("/api/v1/usuario")
-public class UsuarioController {
+public class  UsuarioController {
 
     private final GeradoraService geradoraService;
 

@@ -21,8 +21,6 @@ public class Geradora {
     private long id;
     @Column(nullable = false, length = 45)
     private long cnpj;
-    @Column(nullable = false, length = 14)
-    private String nome;
     @Column(nullable = false, length = 20)
     private String ramo;
     @Column(nullable = false, length = 20)
@@ -38,11 +36,7 @@ public class Geradora {
     @Column(nullable = true, length = 2)
     private String uf;
     @Column(nullable = false, length = 15)
-    private String email;
-    @Column(nullable = false, length = 100)
     private String telefone;
-    @Column(nullable = false, length = 13)
-    private String senha;
     private boolean codstatus;
 
     @OneToMany(mappedBy = "geradora",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
