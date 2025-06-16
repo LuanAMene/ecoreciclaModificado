@@ -17,7 +17,7 @@ public class DestinadoraServiceImp implements DestinadoraService{
 
     @Override
     public Destinadora save(Destinadora destinadora) {
-        destinadora.setCodstatus(true);
+        destinadora.setCodStatus(true);
         if (!destinadora.validarDestinadora()){
             throw new BadRequest(destinadora.getMensagemErro());
         }

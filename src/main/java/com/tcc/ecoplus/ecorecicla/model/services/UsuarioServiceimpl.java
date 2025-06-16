@@ -55,4 +55,20 @@ public class UsuarioServiceimpl implements UsuarioService{
     public boolean delete(Long id) {
         return false;
     }
+
+    @Override
+    public Usuario update(Long id, Usuario usuario) {
+
+        if (!usuarioRepository.existsById(id)) {
+            throw new NotFound("Usuário não encontrado com o id " + id);
+        }
+
+        Usuario usuarioDb = usuarioRepository.findById(id).get();
+        usuarioDb.setEmail(usuario.getEmail());
+        usuarioDb.setNome(usuario.getNome());
+        usuarioDb.setRole(usuario.getRole());
+
+
+        return null;
+    }
 }

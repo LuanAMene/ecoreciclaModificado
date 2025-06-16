@@ -21,7 +21,7 @@ public class Token {
     public boolean expired;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuari_id")
+    @JoinColumn(name = "usuario_id")
     public Usuario usuario;
 
 

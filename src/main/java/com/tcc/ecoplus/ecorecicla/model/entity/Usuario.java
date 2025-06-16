@@ -42,12 +42,12 @@ public class Usuario implements UserDetails {
     private byte imagem;
     private boolean codStatus;
 
-    @OneToMany(mappedBy = "usuario",cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
-    private List<Destinadora> destinadoras = new ArrayList<>();
+    //@OneToMany(mappedBy = "usuario",cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
+    //private List<Destinadora> destinadoras = new ArrayList<>();
 
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonIgnore
-    private List<Geradora> geradoras = new ArrayList<>();
+//    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+ //   @JsonIgnore
+  //  private List<Geradora> geradoras = new ArrayList<>();
 
 
     @OneToMany(mappedBy = "usuario")
@@ -110,7 +110,6 @@ public class Usuario implements UserDetails {
     public void setEmail(String email) {
         this.email = email;
 
-
     }
 
     @Override
@@ -125,7 +124,7 @@ public class Usuario implements UserDetails {
 
     @Override
     public String getUsername() {
-        return "";
+        return email;
     }
 
     @Override

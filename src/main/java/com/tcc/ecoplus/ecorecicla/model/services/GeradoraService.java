@@ -9,4 +9,6 @@ public interface GeradoraService {
     List<Geradora> findAll();
     Geradora findById(Long id);
     boolean delete(Long id);
+    Geradora update(Long id, Geradora geradora);
+    List<Geradora> findByCnpj(String cnpj);
 }

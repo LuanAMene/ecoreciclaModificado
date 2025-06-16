@@ -7,19 +7,16 @@ import jakarta.persistence.*;
 @DiscriminatorValue(value = "REPRESENTANTECOLETORA")
 public class RepresentanteColetora extends Usuario {
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = true)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+    @JoinColumn(name = "geradora_id", referencedColumnName = "id", nullable = true)
     private Geradora geradora;
 
-    public RepresentanteColetora() {
-        super();
-    }
 
-    public Geradora getPessoaJuridica() {
+    public Geradora getGeradora() {
         return geradora;
     }
 
-    public void setPessoaJuridica(Geradora geradora) {
+    public void setGeradora(Geradora geradora) {
         this.geradora = geradora;
     }
 }

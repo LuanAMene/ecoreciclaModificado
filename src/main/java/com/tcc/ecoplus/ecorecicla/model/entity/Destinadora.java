@@ -16,9 +16,11 @@ public class Destinadora {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+    @Column(nullable = true, length = 45)
+    private String nome;
     @Column(nullable = false, length = 45)
-    private long cnpj;
+    private String cnpj;
     @Column(nullable = false, length = 20)
     private String num;
     @Column(nullable = false, length = 10)
@@ -35,7 +37,7 @@ public class Destinadora {
     private String telefone;
     @Column(nullable = true, length = 13)
     private String senha;
-    private boolean codstatus;
+    private boolean codStatus;
 
     @OneToMany(mappedBy = "destinadora",cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
     private List<Coleta> coletas = new ArrayList<>();
@@ -44,13 +46,13 @@ public class Destinadora {
     @JsonIgnore
     private List<Residuo_Destinadora> residuo_destinadoras = new ArrayList<>();
 
-    @OneToMany(mappedBy = "destinadora", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "destinadora", cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     @JsonIgnore
     private List<RepresentanteDestinadora> representanteDestinadora = new ArrayList<>();
 
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = false)
-    private Usuario usuario;
+  //  @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+    //@JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = false)
+    //private Usuario usuario;
 
     @Transient
     @JsonIgnore

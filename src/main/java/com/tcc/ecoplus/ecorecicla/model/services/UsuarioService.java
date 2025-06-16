@@ -10,5 +10,6 @@ public interface UsuarioService {
     List<Usuario> findAll();
     Usuario findById(Long id);
     boolean delete(Long id);
+    Usuario update(Long id, Usuario usuario);
 
 }

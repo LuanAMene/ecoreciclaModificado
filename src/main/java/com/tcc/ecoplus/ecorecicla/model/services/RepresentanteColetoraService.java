@@ -10,4 +10,5 @@ public interface RepresentanteColetoraService {
     List<RepresentanteColetora> findAll();
     RepresentanteColetora findById(Long id);
     boolean delete(Long id);
+    RepresentanteColetora updateGeradora(Long id, RepresentanteColetora representanteColetora);
 }

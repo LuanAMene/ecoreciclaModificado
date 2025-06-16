@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 public class RepresentanteDestinadora extends Usuario {
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = true)
+    @JoinColumn(name = "destinadora_id", referencedColumnName = "id", nullable = true)
     private Destinadora destinadora;
 
 

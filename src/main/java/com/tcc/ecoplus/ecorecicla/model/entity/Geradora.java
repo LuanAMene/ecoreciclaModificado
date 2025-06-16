@@ -19,13 +19,15 @@ public class Geradora {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(nullable = true, length = 45)
+    private String nome;
     @Column(nullable = false, length = 45)
-    private long cnpj;
-    @Column(nullable = false, length = 20)
+    private String cnpj;
+    @Column(nullable = true, length = 20)
     private String ramo;
-    @Column(nullable = false, length = 20)
+    @Column(nullable = true, length = 20)
     private String num;
-    @Column(nullable = false, length = 10)
+    @Column(nullable = true, length = 10)
     private String cep;
     @Column(nullable = true, length = 45)
     private String cidade;
@@ -35,21 +37,21 @@ public class Geradora {
     private String bairro;
     @Column(nullable = true, length = 2)
     private String uf;
-    @Column(nullable = false, length = 15)
+    @Column(nullable = true, length = 15)
     private String telefone;
-    private boolean codstatus;
+    private boolean codStatus;
 
     @OneToMany(mappedBy = "geradora",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Coleta> coletas = new ArrayList<Coleta>();
 
-    @OneToMany(mappedBy = "geradora", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "geradora", cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     @JsonIgnore
     private List<RepresentanteColetora> representanteColetoras = new ArrayList<>();
 
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_usuario", referencedColumnName = "id", nullable = false)
-    private Usuario usuario;
+   // @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    //@JoinColumn(name = "id_usuario", referencedColumnName = "id", nullable = false)
+    //private Usuario usuario;
 
     @Transient
     @JsonIgnore

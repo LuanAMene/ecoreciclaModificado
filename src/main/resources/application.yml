@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:sqlserver://localhost:1433;databaseName=EcoRecicla;integratedSecurity=false;encrypt=false;trustServerCerticate=true
     username: sa
-    password: '@ITB123456'
+    password: 123456
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     database-platform: org.hibernate.dialect.SQLServerDialect
@@ -15,7 +15,7 @@ spring:
 application:
   security:
     jwt:
-      secret-key: elXBEYI9HOH1V4uTbIUp+Bqpu+fuMMDnLxKEN8EOU1gb9v7FzQ79NWbYAXSHYDjL
+      secret-key: LwKu+rbGZutL4c76b2DruqeiOvKeujzWDLFHAlb0rhKYc90f0kYRdHdDqXMg9NZa
       expiration: 86400000 # 1 dia
       refresh-token:
         expiration: 604800000 # 7 dias
