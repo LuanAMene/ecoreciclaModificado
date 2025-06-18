@@ -17,11 +17,11 @@ public class Residuo_Destinadora {
     private boolean codstatus;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_residuo", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "residuo_id", referencedColumnName = "id", nullable = false)
     private Residuo residuo;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_destinadora", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "destinadora_id", referencedColumnName = "id", nullable = false)
     private Destinadora destinadora;
 
     @Transient

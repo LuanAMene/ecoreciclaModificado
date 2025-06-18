@@ -11,7 +11,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/residuo_destinadoracontroller")
+@RequestMapping("/api/v1/destinadora")
 public class DestinadoraController {
 
 private final ResiduoDestinadoraService residuoDestinadoraService;
@@ -20,18 +20,18 @@ private final ResiduoDestinadoraService residuoDestinadoraService;
         this.residuoDestinadoraService = residuoDestinadoraService;
     }
 
-    @PostMapping("/residuo_destinadoracontroller")
+    @PostMapping("/residuo_destinadora")
     public ResponseEntity<Residuo_Destinadora> saveResiduoDestinadora(@RequestBody Residuo_Destinadora residuo_destinadora) {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/v1/geradora").toUriString());
         return ResponseEntity.created(uri).body(residuoDestinadoraService.save(residuo_destinadora));
     }
 
-    @GetMapping("/residuo")
+    @GetMapping("/residuo_destinadora")
     public ResponseEntity<List<Residuo_Destinadora>> findAll() {
         return ResponseEntity.ok(residuoDestinadoraService.findAll());
     }
 
-    @GetMapping("/residuo_destinadoracontroller/{id}")
+    @GetMapping("/residuo_destinadora/{id}")
     public ResponseEntity<Residuo_Destinadora> findById(@PathVariable(value = "id") String id) {
         try {Long idLong = Long.parseLong(id);
         return ResponseEntity.ok(residuoDestinadoraService.findById(idLong));
