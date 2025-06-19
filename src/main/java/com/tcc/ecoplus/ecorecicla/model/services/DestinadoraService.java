@@ -8,5 +8,6 @@ public interface DestinadoraService {
     Destinadora save(Destinadora destinadora);
     List<Destinadora> findAll();
     Destinadora findById(Long id);
+    List<Destinadora> findByResiduo();
     boolean delete(Long id);
 }

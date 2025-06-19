@@ -4,6 +4,7 @@ import com.tcc.ecoplus.ecorecicla.exceptions.BadRequest;
 import com.tcc.ecoplus.ecorecicla.exceptions.NotFound;
 import com.tcc.ecoplus.ecorecicla.model.entity.Destinadora;
 import com.tcc.ecoplus.ecorecicla.model.repository.DestinadoraRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -43,4 +44,16 @@ public class DestinadoraServiceImp implements DestinadoraService{
     public boolean delete(Long id) {
         return false;
     }
+
+
+    @Override
+    public List<Destinadora> findByResiduo() {
+        try {
+            return destinadoraRepository.findByResiduo();
+        }catch (Exception e) {
+            throw new NotFound("Nã há destinadoras que aceitem" );
+        }
+    }
+
+
 }

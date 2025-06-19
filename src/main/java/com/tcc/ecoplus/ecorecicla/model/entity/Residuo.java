@@ -20,7 +20,7 @@ public class Residuo {
     @Column(nullable = false, length = 50)
     private String classe;
     @Column(nullable = false, length = 50)
-    private String grupo;
+    private String tipo;
     @Column(nullable = true, length = 1000)
     private String descricao;
     private boolean codstatus;

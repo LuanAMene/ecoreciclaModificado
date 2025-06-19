@@ -1,7 +1,9 @@
 package com.tcc.ecoplus.ecorecicla.controller;
 
 import com.tcc.ecoplus.ecorecicla.exceptions.BadRequest;
+import com.tcc.ecoplus.ecorecicla.model.entity.Destinadora;
 import com.tcc.ecoplus.ecorecicla.model.entity.Residuo_Destinadora;
+import com.tcc.ecoplus.ecorecicla.model.services.DestinadoraService;
 import com.tcc.ecoplus.ecorecicla.model.services.ResiduoDestinadoraService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +18,11 @@ public class DestinadoraController {
 
 private final ResiduoDestinadoraService residuoDestinadoraService;
 
-    public DestinadoraController(ResiduoDestinadoraService residuoDestinadoraService) {
+private final DestinadoraService destinadoraService;
+
+    public DestinadoraController(ResiduoDestinadoraService residuoDestinadoraService, DestinadoraService destinadoraService) {
         this.residuoDestinadoraService = residuoDestinadoraService;
+        this.destinadoraService = destinadoraService;
     }
 
     @PostMapping("/residuo_destinadora")
@@ -38,5 +43,10 @@ private final ResiduoDestinadoraService residuoDestinadoraService;
         } catch (NumberFormatException e) {
             throw new BadRequest("'"+id+"' não é um número inteiro válido. Por favor, forneça um valor inteiro.");
         }
+    }
+
+    @GetMapping("/residuos")
+    public ResponseEntity<List<Destinadora>> getDestinadoraByResiduo() {
+        return ResponseEntity.ok(destinadoraService.findByResiduo());
     }
 }
