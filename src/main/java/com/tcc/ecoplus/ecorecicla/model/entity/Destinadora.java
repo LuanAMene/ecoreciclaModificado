@@ -17,8 +17,6 @@ public class Destinadora {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = true, length = 45)
-    private String nome;
     @Column(nullable = false, length = 45)
     private String cnpj;
     @Column(nullable = false, length = 20)
@@ -35,8 +33,6 @@ public class Destinadora {
     private String uf;
     @Column(nullable = false, length = 100)
     private String telefone;
-    @Column(nullable = true, length = 13)
-    private String senha;
     private boolean codStatus;
 
     @OneToMany(mappedBy = "destinadora",cascade = CascadeType.MERGE,fetch = FetchType.LAZY)

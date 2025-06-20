@@ -46,7 +46,10 @@ private final DestinadoraService destinadoraService;
     }
 
     @GetMapping("/residuos")
-    public ResponseEntity<List<Destinadora>> getDestinadoraByResiduo() {
-        return ResponseEntity.ok(destinadoraService.findByResiduo());
+    public ResponseEntity<List<Destinadora>> getDestinadorasByTipoOuClasse(
+            @RequestParam(required = false) String tipo,
+            @RequestParam(required = false) String classe) {
+
+        return ResponseEntity.ok(destinadoraService.findByTipoAndClasse(tipo, classe));
     }
 }

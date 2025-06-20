@@ -8,6 +8,6 @@ public interface DestinadoraService {
     Destinadora save(Destinadora destinadora);
     List<Destinadora> findAll();
     Destinadora findById(Long id);
-    List<Destinadora> findByResiduo();
+    List<Destinadora> findByTipoAndClasse(String tipo, String classe);
     boolean delete(Long id);
 }

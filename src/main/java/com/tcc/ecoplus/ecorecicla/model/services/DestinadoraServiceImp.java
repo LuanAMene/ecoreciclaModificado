@@ -47,12 +47,12 @@ public class DestinadoraServiceImp implements DestinadoraService{
 
 
     @Override
-    public List<Destinadora> findByResiduo() {
-        try {
-            return destinadoraRepository.findByResiduo();
-        }catch (Exception e) {
-            throw new NotFound("Nã há destinadoras que aceitem" );
+    public List<Destinadora> findByTipoAndClasse(String tipo, String classe) {
+        List<Destinadora> lista = destinadoraRepository.findByTipoAndClasse(tipo, classe);
+        if (lista.isEmpty()) {
+            throw new NotFound("Nenhuma destinadora encontrada para os filtros informados.");
         }
+        return lista;
     }
 
 

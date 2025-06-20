@@ -19,8 +19,6 @@ public class Geradora {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(nullable = true, length = 45)
-    private String nome;
     @Column(nullable = false, length = 45)
     private String cnpj;
     @Column(nullable = true, length = 20)
